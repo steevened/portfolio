@@ -1,27 +1,38 @@
 import './App.css';
 import Hero from './components/Hero';
-import Navbar from './components/Navbar';
 import tw from 'twin.macro';
+<<<<<<< HEAD
 import shallow from 'zustand/shallow';
 
 import { useCounterStore } from './store/CounterStore';
 import { useEffect } from 'react';
+=======
+import OverlayComponent from './components/Overlay';
+import { useModalStore } from './store/ModalStore';
+import { shallow } from 'zustand/shallow';
+>>>>>>> main
 
 const styles = {
-  // Move long class sets out of jsx to keep it scannable
   container: [tw`min-h-screen`, tw`bg-primary`],
 };
 
 function App() {
+<<<<<<< HEAD
   const { count, title, posts } = useCounterStore(
     (state) => ({
       count: state.count,
       title: state.title,
       posts: state.posts,
+=======
+  const { isOpen } = useModalStore(
+    (state) => ({
+      isOpen: state.isOpen,
+>>>>>>> main
     }),
     shallow
   );
 
+<<<<<<< HEAD
   const { increment, decrement, getPosts, clearStore, multiply } =
     useCounterStore();
 
@@ -68,6 +79,12 @@ function App() {
           {JSON.stringify(posts)}
         </div>
       </div>
+=======
+  return (
+    <div css={styles.container}>
+      <OverlayComponent isOpen={isOpen} />
+      <Hero />
+>>>>>>> main
     </div>
   );
 }
