@@ -7,7 +7,9 @@ interface isShowedProps {
 }
 
 const Overlay = styled.div(({ isOpen }: isShowedProps) => [
-  tw`transition-all duration-300 ease-in-out z-10 absolute inset-0 bg-black/50 backdrop-blur-2xl`,
+  tw`transition-all duration-300 ease-in-out z-10`,
+  tw`bg-black/50 backdrop-blur-2xl`,
+  tw`absolute inset-0`,
   isOpen ? tw` pointer-events-auto` : tw`opacity-0 pointer-events-none`,
 ]);
 
