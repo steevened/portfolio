@@ -1,15 +1,18 @@
 import React from 'react';
 import tw from 'twin.macro';
+import { useModalStore } from '../store/ModalStore';
 
 const styles = {
-  container: [tw`w-full`, tw`absolute top-0`, tw`p-4`],
+  container: [tw`w-full`, tw`absolute top-0 left-0`, tw`p-4`],
   menu: [tw`flex justify-end cursor-pointer`],
 };
 
 const Navbar = () => {
+  const { openModal } = useModalStore();
+
   return (
     <nav css={styles.container}>
-      <div css={styles.menu}>
+      <div onClick={() => openModal()} css={styles.menu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

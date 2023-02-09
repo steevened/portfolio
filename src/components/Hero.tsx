@@ -1,6 +1,7 @@
 import React from 'react';
 import tw from 'twin.macro';
 import circle from '../assets/circles.svg';
+import Navbar from './Navbar';
 
 const HeroContainer = tw.div`
   bg-cover
@@ -11,9 +12,9 @@ const HeroContainer = tw.div`
 
 const Hero: React.FC = () => {
   return (
-    <HeroContainer
-      style={{ backgroundImage: `url(${circle})` }}
-    ></HeroContainer>
+    <HeroContainer style={{ backgroundImage: `url(${circle})` }}>
+      <Navbar />
+    </HeroContainer>
   );
 };
 
