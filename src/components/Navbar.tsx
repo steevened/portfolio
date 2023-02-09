@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 import { useModalStore } from '../store/ModalStore';
 import { motion, Variants } from 'framer-motion';
 import { shallow } from 'zustand/shallow';
+import BtnGradient from './BtnGradient';
 
 const styles = {
   container: [
@@ -23,13 +24,6 @@ const styles = {
   ],
   li: [tw`block p-2.5`],
   ulMd: [tw`hidden  md:flex gap-10`],
-  btn: [
-    tw`bg-gradient-to-bl from-blueBtn to-purpleBtn`,
-    tw`py-1 px-2`,
-    tw`rounded-lg`,
-    tw`hidden md:block absolute right-5 lg:right-16`,
-    tw`font-bold`,
-  ],
 };
 
 const itemVariants: Variants = {
@@ -126,16 +120,7 @@ const Navbar = () => {
         <motion.li>Item 2</motion.li>
         <motion.li>Item 3</motion.li>
       </motion.ul>
-      <motion.button
-        whileTap={{ scale: 0.97 }}
-        transition={{
-          type: 'spring',
-          stiffness: 1000,
-        }}
-        css={styles.btn}
-      >
-        Contact
-      </motion.button>
+      <BtnGradient isInNav={true}>Contact</BtnGradient>
     </motion.nav>
   );
 };

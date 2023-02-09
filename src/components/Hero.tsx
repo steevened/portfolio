@@ -7,6 +7,8 @@ import grad2 from '../assets/planet2.svg';
 import sphere1 from '../assets/sphere1.svg';
 import sphere2 from '../assets/sphere2.svg';
 import bg from '../assets/bg-img.svg';
+import { motion } from 'framer-motion';
+import BtnGradient from './BtnGradient';
 
 const styles = {
   container: [tw`bg-cover bg-center h-screen relative`],
@@ -14,24 +16,35 @@ const styles = {
   grad2: [tw`absolute top-0 -right-48 w-[400px] h-[400px] md:hidden`],
   sphere1: [tw`absolute top-64 -right-32  w-[200px] h-[200px] md:hidden`],
   sphere2: [tw`absolute top-80 -left-24  w-[200px] h-[200px] md:hidden`],
+  text: [
+    tw`text-white text-center text-4xl font-bold leading-5 md:text-6xl`,
+    tw`flex h-full items-center justify-center flex-col gap-10`,
+  ],
 };
 
 const Hero: React.FC = () => {
   return (
     <div css={styles.container} style={{ backgroundImage: `url(${bg})` }}>
       <Navbar />
-      <div css={styles.grad1}>
-        <img src={grad1} alt="gradient" />
+      <div>
+        <div css={styles.grad1}>
+          <img src={grad1} alt="gradient" />
+        </div>
+        <div css={styles.grad2}>
+          <img src={grad2} alt="gradient" />
+        </div>
+        <div css={styles.sphere1}>
+          <img src={sphere1} alt="sphere" />
+        </div>
+        <div css={styles.sphere2}>
+          <img src={sphere2} alt="sphere" />
+        </div>
       </div>
-      <div css={styles.grad2}>
-        <img src={grad2} alt="gradient" />
-      </div>
-      <div css={styles.sphere1}>
-        <img src={sphere1} alt="sphere" />
-      </div>
-      <div css={styles.sphere2}>
-        <img src={sphere2} alt="sphere" />
-      </div>
+      <motion.div css={styles.text}>
+        <h2>I'm Steven </h2>
+        <h3>A Frontend Web Developer</h3>
+        <BtnGradient isInNav={false}>Know More</BtnGradient>
+      </motion.div>
     </div>
   );
 };
