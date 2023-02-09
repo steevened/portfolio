@@ -5,15 +5,31 @@ import { motion, Variants } from 'framer-motion';
 import { shallow } from 'zustand/shallow';
 
 const styles = {
-  container: [tw`w-full`, tw`absolute top-0 left-0 z-50 text-white`],
-  menu: [tw`flex justify-between cursor-pointer`],
+  container: [
+    tw`w-full h-14`,
+    tw`fixed top-0 left-0`,
+    tw`z-50 text-white `,
+    tw`md:(flex items-center justify-center)`,
+  ],
+  menu: [tw`flex justify-between cursor-pointer md:hidden`],
   button: [
-    tw`flex justify-between items-center  w-full py-2.5 px-10 bg-slate-900/20 backdrop-blur-lg`,
+    tw`flex justify-between items-center`,
+    tw`w-full py-2.5 px-10 md:hidden`,
   ],
   ul: [
-    tw`flex flex-col items-center bg-slate-900/20 backdrop-blur-lg w-5/6 mx-auto mt-5 gap-2.5 p-2.5`,
+    tw`flex flex-col items-center md:hidden`,
+    tw`bg-purple-900/10 backdrop-blur-3xl`,
+    tw`w-5/6 mx-auto mt-5 gap-2.5 p-2.5`,
   ],
   li: [tw`block p-2.5`],
+  ulMd: [tw`hidden  md:flex gap-10`],
+  btn: [
+    tw`bg-gradient-to-bl from-blueBtn to-purpleBtn`,
+    tw`py-1 px-2`,
+    tw`rounded-lg`,
+    tw`hidden md:block absolute right-5 lg:right-16`,
+    tw`font-bold`,
+  ],
 };
 
 const itemVariants: Variants = {
@@ -42,9 +58,9 @@ const Navbar = () => {
       css={styles.container}
     >
       <motion.button
-        css={styles.button}
         onClick={() => toggleModal()}
-        whileTap={{ scale: 0.97 }}
+        whileTap={{ scale: 0.99 }}
+        css={styles.button}
       >
         Menu
         <motion.div
@@ -105,6 +121,21 @@ const Navbar = () => {
           Item 3
         </motion.li>
       </motion.ul>
+      <motion.ul css={styles.ulMd}>
+        <motion.li>Item 1</motion.li>
+        <motion.li>Item 2</motion.li>
+        <motion.li>Item 3</motion.li>
+      </motion.ul>
+      <motion.button
+        whileTap={{ scale: 0.97 }}
+        transition={{
+          type: 'spring',
+          stiffness: 1000,
+        }}
+        css={styles.btn}
+      >
+        Contact
+      </motion.button>
     </motion.nav>
   );
 };

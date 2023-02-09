@@ -7,6 +7,7 @@ module.exports = {
         primary: '#0B0B0F',
         blueBtn: '#18C8FF',
         purpleBtn: '#933FFE',
+        blur: '#1a1b23',
       },
     },
   },
