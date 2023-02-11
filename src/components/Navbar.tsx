@@ -112,7 +112,7 @@ const Navbar = () => {
           Item 2
         </motion.li>
         <motion.li css={styles.li} variants={itemVariants}>
-          Item 3
+          <BtnGradient isInNav={false}>Contact </BtnGradient>
         </motion.li>
       </motion.ul>
       <motion.ul css={styles.ulMd}>
