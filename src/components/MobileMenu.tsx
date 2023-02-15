@@ -13,7 +13,7 @@ const Menu = styled(motion.nav)(() => [
   tw`transition-all ease-in-out duration-300`,
 ]);
 
-const menu = { hidden: {} };
+// const menu = { hidden: {} };
 
 const Ul = tw(motion.ul)`flex flex-col gap-6 text-2xl`;
 

@@ -4,11 +4,13 @@ import tw from 'twin.macro';
 import OverlayComponent from './components/Overlay';
 import { useModalStore } from './store/ModalStore';
 import { shallow } from 'zustand/shallow';
-import MobileMenu from './components/MobileMenu';
-import { motion, AnimatePresence } from 'framer-motion';
+
+import Services from './components/Services';
+import Gradient1 from './components/Gradients/Gradient1';
+import Gradient2 from './components/Gradients/Gradient2';
 
 const styles = {
-  container: [tw`min-h-screen`, tw`bg-primary`],
+  container: [tw`min-h-screen h-full relative overflow-hidden`, tw`bg-primary`],
 };
 
 function App() {
@@ -22,8 +24,8 @@ function App() {
   return (
     <div css={styles.container}>
       <OverlayComponent isOpen={isOpen} />
-      {/* <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence> */}
       <Hero />
+      <Services />
     </div>
   );
 }
