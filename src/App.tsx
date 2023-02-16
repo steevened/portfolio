@@ -10,7 +10,10 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 
 const styles = {
-  container: [tw`isolate bg-white dark:bg-gray-999`],
+  container: [
+    tw`isolate bg-white  text-white `,
+    tw`dark:(bg-gray-999 text-gray-999)`,
+  ],
 };
 
 function App() {

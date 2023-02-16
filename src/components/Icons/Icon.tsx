@@ -2,11 +2,12 @@ import { HTMLAttributes } from 'react';
 import { iconPaths } from './IconPath';
 import { SVGProps } from 'react';
 import React from 'react';
+import IconTerminal from './IconTerminal';
 
-interface IconProps extends SVGProps<SVGSVGElement> {
+interface IconProps {
   gradient?: boolean;
   size?: string;
-  icon?: keyof typeof iconPaths;
+  icon?: string;
   color?: string;
 }
 
@@ -16,8 +17,6 @@ export default function Icon({
   icon,
   color = 'currentColor',
 }: IconProps) {
-  const iconPath = icon ? iconPaths[icon] : null;
-
   const attrs: HTMLAttributes<SVGSVGElement> = {};
   if (size) attrs.style = { fontSize: size };
 
@@ -34,25 +33,7 @@ export default function Icon({
       stroke={gradient ? `url(#${gradientId})` : color}
       {...attrs}
     >
-      <path
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16"
-        d="m80 96 40 32-40 32m56 0h40"
-      />
-      <rect
-        width="192"
-        height="160"
-        x="32"
-        y="48"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="16.97"
-        rx="8.5"
-      />
-
+      {icon === 'terminal-window' && <IconTerminal />}
       {gradient && (
         <linearGradient
           id={gradientId}
