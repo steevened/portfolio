@@ -4,6 +4,7 @@ import { useModalStore } from '../store/ModalStore';
 import { motion, Variants } from 'framer-motion';
 import { shallow } from 'zustand/shallow';
 import BtnGradient from './BtnGradient';
+import Icon from './Icons/Icon';
 
 const styles = {
   container: [
@@ -46,82 +47,90 @@ const Navbar = () => {
   );
 
   return (
-    <motion.nav
-      initial={false}
-      animate={isOpen ? 'open' : 'closed'}
-      css={styles.container}
-    >
-      <motion.button
-        onClick={() => toggleModal()}
-        whileTap={{ scale: 0.99 }}
-        css={styles.button}
-      >
-        Menu
-        <motion.div
-          variants={{
-            open: { rotate: 180 },
-            closed: { rotate: 0 },
-          }}
-          transition={{ duration: 0.2 }}
-          style={{ originY: 0.55 }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={3}
-            stroke="currentColor"
-            className="w-4 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 15.75l7.5-7.5 7.5 7.5"
-            />
-          </svg>
-        </motion.div>
-      </motion.button>
-      <motion.ul
-        variants={{
-          open: {
-            clipPath: 'inset(0% 0% 0% 0% round 10px)',
-            transition: {
-              type: 'spring',
-              bounce: 0,
-              duration: 0.7,
-              delayChildren: 0.3,
-              staggerChildren: 0.05,
-            },
-          },
-          closed: {
-            clipPath: 'inset(10% 50% 90% 50% round 10px)',
-            transition: {
-              type: 'spring',
-              bounce: 0,
-              duration: 0.3,
-            },
-          },
-        }}
-        css={styles.ul}
-        style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
-      >
-        <motion.li css={styles.li} variants={itemVariants}>
-          Item 1
-        </motion.li>
-        <motion.li css={styles.li} variants={itemVariants}>
-          Item 2
-        </motion.li>
-        <motion.li css={styles.li} variants={itemVariants}>
-          <BtnGradient isInNav={false}>Contact </BtnGradient>
-        </motion.li>
-      </motion.ul>
-      <motion.ul css={styles.ulMd}>
-        <motion.li>Item 1</motion.li>
-        <motion.li>Item 2</motion.li>
-        <motion.li>Item 3</motion.li>
-      </motion.ul>
-      <BtnGradient isInNav={true}>Contact</BtnGradient>
+    <motion.nav>
+      <div>
+        <a href="/">
+          <Icon icon="terminal-window" color="#eee" size="1.6em" gradient />
+          Steven
+        </a>
+      </div>
     </motion.nav>
+    // <motion.nav
+    //   initial={false}
+    //   animate={isOpen ? 'open' : 'closed'}
+    //   css={styles.container}
+    // >
+    //   <motion.button
+    //     onClick={() => toggleModal()}
+    //     whileTap={{ scale: 0.99 }}
+    //     css={styles.button}
+    //   >
+    //     Menu
+    //     <motion.div
+    //       variants={{
+    //         open: { rotate: 180 },
+    //         closed: { rotate: 0 },
+    //       }}
+    //       transition={{ duration: 0.2 }}
+    //       style={{ originY: 0.55 }}
+    //     >
+    //       <svg
+    //         xmlns="http://www.w3.org/2000/svg"
+    //         fill="none"
+    //         viewBox="0 0 24 24"
+    //         strokeWidth={3}
+    //         stroke="currentColor"
+    //         className="w-4 h-5"
+    //       >
+    //         <path
+    //           strokeLinecap="round"
+    //           strokeLinejoin="round"
+    //           d="M4.5 15.75l7.5-7.5 7.5 7.5"
+    //         />
+    //       </svg>
+    //     </motion.div>
+    //   </motion.button>
+    //   <motion.ul
+    //     variants={{
+    //       open: {
+    //         clipPath: 'inset(0% 0% 0% 0% round 10px)',
+    //         transition: {
+    //           type: 'spring',
+    //           bounce: 0,
+    //           duration: 0.7,
+    //           delayChildren: 0.3,
+    //           staggerChildren: 0.05,
+    //         },
+    //       },
+    //       closed: {
+    //         clipPath: 'inset(10% 50% 90% 50% round 10px)',
+    //         transition: {
+    //           type: 'spring',
+    //           bounce: 0,
+    //           duration: 0.3,
+    //         },
+    //       },
+    //     }}
+    //     css={styles.ul}
+    //     style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
+    //   >
+    //     <motion.li css={styles.li} variants={itemVariants}>
+    //       Item 1
+    //     </motion.li>
+    //     <motion.li css={styles.li} variants={itemVariants}>
+    //       Item 2
+    //     </motion.li>
+    //     <motion.li css={styles.li} variants={itemVariants}>
+    //       <BtnGradient isInNav={false}>Contact </BtnGradient>
+    //     </motion.li>
+    //   </motion.ul>
+    //   <motion.ul css={styles.ulMd}>
+    //     <motion.li>Item 1</motion.li>
+    //     <motion.li>Item 2</motion.li>
+    //     <motion.li>Item 3</motion.li>
+    //   </motion.ul>
+    //   <BtnGradient isInNav={true}>Contact</BtnGradient>
+    // </motion.nav>
   );
 };
 
