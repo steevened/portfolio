@@ -3,9 +3,6 @@ import tw from 'twin.macro';
 import Navbar from './Navbar';
 import { motion } from 'framer-motion';
 import BtnGradient from './BtnGradient';
-import gradgreen from '../assets/gradgreen.svg';
-import grad2 from '../assets/grad2.svg';
-import Gradient1 from './Gradients/Gradient1';
 
 const styles = {
   container: [tw`bg-cover bg-center h-screen relative`],
@@ -17,16 +14,11 @@ const styles = {
   ],
 };
 
-const Hero: React.FC = () => {
+const Hero = () => {
   return (
     <div css={styles.container}>
-      <Gradient1 />
-      <div css={styles.gradgreen}>
-        <img src={gradgreen} alt="gradient" />
-      </div>
-      <div css={styles.grad2}>
-        <img src={grad2} alt="gradient" />
-      </div>
+      <div css={styles.gradgreen}></div>
+      <div css={styles.grad2}></div>
       <Navbar />
       <motion.div css={styles.text}>
         <h2>I'm Steven </h2>

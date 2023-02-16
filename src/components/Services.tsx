@@ -1,7 +1,5 @@
 import bg from '../assets/block2.svg';
 import tw from 'twin.macro';
-import Gradient2 from './Gradients/Gradient2';
-import Gradient3 from './Gradients/Gradient3';
 
 const styles = {
   container: [tw`bg-cover bg-center h-screen`],
@@ -23,8 +21,6 @@ const styles = {
 function Services() {
   return (
     <div css={styles.container}>
-      <Gradient3 />
-      <Gradient2 />
       <div css={styles.services}>
         <div css={styles.box}></div>
         <div css={styles.box}></div>

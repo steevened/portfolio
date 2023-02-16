@@ -1,19 +1,35 @@
-import './App.css';
+import './styles/App.css';
+import './styles/custom/backgrounds.css';
 import Hero from './components/Hero';
 import tw from 'twin.macro';
 import OverlayComponent from './components/Overlay';
 import { useModalStore } from './store/ModalStore';
 import { shallow } from 'zustand/shallow';
-
 import Services from './components/Services';
-import Gradient1 from './components/Gradients/Gradient1';
-import Gradient2 from './components/Gradients/Gradient2';
+import { useEffect } from 'react';
+import Navbar from './components/Navbar';
 
 const styles = {
-  container: [tw`min-h-screen h-full relative overflow-hidden`, tw`bg-primary`],
+  container: [tw`isolate bg-white dark:bg-gray-999`],
 };
 
 function App() {
+  useEffect(() => {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    addEventListener('load', () =>
+      document.documentElement.classList.add('loaded')
+    );
+  }, []);
+
   const { isOpen } = useModalStore(
     (state) => ({
       isOpen: state.isOpen,
@@ -22,9 +38,10 @@ function App() {
   );
 
   return (
-    <div css={styles.container}>
+    <div className="backgrounds" css={styles.container}>
       <OverlayComponent isOpen={isOpen} />
-      <Hero />
+      <Navbar />
+      {/* <Hero /> */}
       <Services />
     </div>
   );
