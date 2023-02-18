@@ -5,6 +5,7 @@ import { motion, Variants } from 'framer-motion';
 import { shallow } from 'zustand/shallow';
 import BtnGradient from './BtnGradient';
 import Icon from './Icons/Icon';
+import ThemeToggle from '../ThemeToggle';
 
 const styles = {
   container: [
@@ -143,7 +144,8 @@ const Navbar = () => {
         <motion.li>Work</motion.li>
       </motion.ul>
       <div css={styles.darkToggle}>
-        <BtnGradient isInNav={false}>Contact </BtnGradient>
+        {/* <BtnGradient isInNav={false}>Contact </BtnGradient> */}
+        <ThemeToggle />
       </div>
     </motion.nav>
   );

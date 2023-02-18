@@ -8,6 +8,7 @@ import { shallow } from 'zustand/shallow';
 import Services from './components/Services';
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
+import { Menu, Transition } from '@headlessui/react';
 
 const styles = {
   container: [

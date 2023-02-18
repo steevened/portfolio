@@ -10,6 +10,8 @@ module.exports = {
         purpleBtn: '#933FFE',
         blur: '#1a1b23',
         'gray-999': '#090b11',
+        'accent-regular': '#7611a6',
+        'accent-overlay': 'hsla(280, 89%, 67%, 0.33)',
       },
       screens: {
         xs: '375px',

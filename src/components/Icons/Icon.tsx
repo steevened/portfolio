@@ -1,13 +1,10 @@
 import { HTMLAttributes } from 'react';
-import { iconPaths } from './IconPath';
-import { SVGProps } from 'react';
-import React from 'react';
-import IconTerminal from './IconTerminal';
+import IconVariant from './IconVariant';
 
 interface IconProps {
   gradient?: boolean;
   size?: string;
-  icon?: string;
+  icon: string;
   color?: string;
 }
 
@@ -33,7 +30,7 @@ export default function Icon({
       stroke={gradient ? `url(#${gradientId})` : color}
       {...attrs}
     >
-      {icon === 'terminal-window' && <IconTerminal />}
+      <IconVariant icon={icon} />
       {gradient && (
         <linearGradient
           id={gradientId}
