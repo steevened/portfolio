@@ -11,12 +11,14 @@ const styles = {
   container: [
     tw`w-full h-14 px-4`,
     tw`fixed top-0 left-0`,
-    tw`z-50 text-black `,
+    tw`z-50 text-gray-900`,
     tw`flex items-center justify-between`,
     tw`dark:(text-white)`,
+    tw`md:(px-14 py-10)`,
+    tw`bg-white/50 backdrop-blur-2xl`,
   ],
-  logo: [tw`flex  items-center gap-1`],
-  span: [tw`font-bold text-lg`],
+  logo: [tw`flex items-center gap-1`],
+  span: [tw`font-bold text-2xl`],
   button: [tw`sm:hidden`],
   ul: [
     tw`flex flex-col items-center sm:hidden`,
@@ -29,7 +31,10 @@ const styles = {
   ],
   li: [tw`py-1`],
   darkToggle: [tw`hidden sm:block`],
-  ulMd: [tw`hidden  sm:flex gap-10`],
+  ulMd: [
+    tw`hidden font-bold text-lg gap-10 border px-4 py-2  rounded-full bg-white`,
+    tw`sm:(flex items-center justify-center)`,
+  ],
 };
 
 const itemVariants: Variants = {
@@ -139,9 +144,15 @@ const Navbar = () => {
       </motion.ul>
       {/* desktop menu, only visible from sm */}
       <motion.ul css={styles.ulMd}>
-        <motion.li>Home</motion.li>
-        <motion.li>About</motion.li>
-        <motion.li>Work</motion.li>
+        <motion.li className="active relative px-2">
+          <span className="relative text-white">Home</span>
+        </motion.li>
+        <motion.li className="active relative px-2">
+          <span className="relative text-white">About</span>
+        </motion.li>
+        <motion.li className="active relative px-2">
+          <span className="relative text-white">Work</span>
+        </motion.li>
       </motion.ul>
       <div css={styles.darkToggle}>
         {/* <BtnGradient isInNav={false}>Contact </BtnGradient> */}

@@ -12,6 +12,7 @@ module.exports = {
         'gray-999': '#090b11',
         'accent-regular': '#7611a6',
         'accent-overlay': 'hsla(280, 89%, 67%, 0.33)',
+        'text-gray': '#79808a',
       },
       screens: {
         xs: '375px',

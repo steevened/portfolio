@@ -12,7 +12,7 @@ import { Menu, Transition } from '@headlessui/react';
 
 const styles = {
   container: [
-    tw`isolate bg-white  text-white `,
+    tw`isolate bg-white  text-white`,
     tw`dark:(bg-gray-999 text-gray-999)`,
   ],
 };
