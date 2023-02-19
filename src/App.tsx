@@ -129,29 +129,58 @@ export default function App() {
   });
 
   return (
-    <div className="dark:bg-slate-900 dark:text-gray-100 h-full min-h-screen duration-100">
-      <div className="fixed top-5 right-10 duration-100 dark:bg-slate-800 bg-gray-100 rounded flex">
+    <div className="bg-slate-100 dark:bg-slate-900 dark:text-gray-100 h-full min-h-screen duration-100">
+      <div className="fixed top-5 right-10">
         <Listbox value={theme} onChange={setTheme}>
-          <Listbox.Button>{theme}</Listbox.Button>
-          <Listbox.Options>
-            {options.map((option) => (
-              <Listbox.Option value={option}>{option.icon()}</Listbox.Option>
-            ))}
-          </Listbox.Options>
+          <div className="relative mt-1">
+            <Listbox.Button className="text-sky-500 flex items-center justify-center m-1">
+              {theme === 'dark'
+                ? sunIcon()
+                : theme === 'system'
+                ? systemIcon()
+                : moonIcon()}
+            </Listbox.Button>
+
+            <Transition
+              enter="transition duration-100 ease-out"
+              enterFrom="transform scale-90 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 ease-out"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Listbox.Options className="absolute z-50 top-full right-0 mt-1 rounded-lg shadow-lg ring-slate-900/10 overflow-hidden w-36 text-sm text-slate-700 font-semibold dark:ring-0 dark:shadow-[inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)] dark:bg-slate-800 dark:text-slate-300 duration-100 ring-1 mt-4">
+                {options.map((option) => (
+                  <Listbox.Option
+                    key={option.text}
+                    value={option.text}
+                    as={Fragment}
+                    className={({ active }: { active: boolean }) =>
+                      `relative select-none py-2 flex items-center justify-start gap-2 ${
+                        active && 'bg-slate-200 dark:bg-slate-600/30'
+                      }`
+                    }
+                  >
+                    {({ selected }) => (
+                      <li
+                        className={`cursor-pointer py-1 px-2 flex items-center justify-start ${
+                          selected
+                            ? 'text-sky-600'
+                            : 'text-slate-500 dark:text-slate-300'
+                        }`}
+                      >
+                        <div>{option.icon()}</div>
+                        {option.text[0].toUpperCase()}
+                        {option.text.slice(1)}
+                      </li>
+                    )}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Transition>
+          </div>
         </Listbox>
       </div>
     </div>
   );
 }
-
-// {options.map((option) => (
-//   <button
-//     key={option.text}
-//     onClick={() => setTheme(option.text)}
-//     className={`w-8 h-8 leading-9 text-xl rounded-full m-1  flex items-center justify-center ${
-//       theme === option.text && 'text-sky-500'
-//     }`}
-//   >
-//     {option.icon()}
-//   </button>
-// ))}
