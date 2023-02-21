@@ -2,6 +2,7 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
+
   theme: {
     extend: {
       colors: {
@@ -14,14 +15,7 @@ module.exports = {
         'accent-overlay': 'hsla(280, 89%, 67%, 0.33)',
         'text-gray': '#79808a',
       },
-      screens: {
-        xs: '375px',
-        sm: '794px',
-        md: '900px',
-        lg: '1200px',
-        xl: '1536px',
-      },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
