@@ -4,7 +4,7 @@ import bgDark from '../assets/bg-dark.avif';
 
 export default function Bg() {
   return (
-    <div className="absolute z-20 top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
+    <div className="absolute  top-0 inset-x-0 flex justify-center overflow-hidden pointer-events-none">
       <div className="w-[108rem] flex-none flex justify-end h-screen">
         <picture>
           <img
