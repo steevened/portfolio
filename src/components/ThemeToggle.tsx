@@ -131,7 +131,7 @@ export default function ThemeToggle() {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Listbox.Options className="absolute bg-white/40 top-full right-0 mt-5 rounded-lg shadow-lg ring-slate-900/10 overflow-hidden w-32 text-sm text-slate-700 font-semibold dark:ring-0 dark:shadow-[inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)] dark:bg-black/40 backdrop-blur-md dark:text-slate-300 duration-100 ring-1 mt-6">
+            <Listbox.Options className="absolute bg-white/40 top-full right-0 mt-5 rounded-lg shadow-lg ring-slate-900/10 overflow-hidden w-32 text-sm text-slate-700 font-semibold dark:ring-0 dark:shadow-[inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)] dark:bg-black/40 backdrop-blur-md dark:text-slate-300 duration-100 ring-1 mt-6 z-50">
               {options.map((option) => (
                 <Listbox.Option
                   key={option.text}
