@@ -6,7 +6,7 @@ export default function Overlay() {
   return (
     <div
       onClick={() => closeModal()}
-      className={`absolute inset-0  z-30 bg-black/50  backdrop-blur-sm md:hidden  ${
+      className={`absolute inset-0  z-50 bg-black/50  backdrop-blur-sm md:hidden  ${
         isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
     />

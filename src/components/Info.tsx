@@ -1,5 +1,4 @@
 import ViewContainer from './ViewContainer';
-
 export default function Info() {
   return (
     <ViewContainer className="px-10 py-8 flex flex-col text-slate-800 dark:text-slate-200">
