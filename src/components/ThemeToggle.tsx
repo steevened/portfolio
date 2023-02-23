@@ -118,7 +118,7 @@ export default function ThemeToggle() {
   return (
     <div className="">
       <Listbox value={theme} onChange={setTheme}>
-        <div className="relative mt-1">
+        <div className="relative mt-1 z-[100]">
           <Listbox.Button className="text-sky-500 flex items-center justify-center m-1">
             {theme === 'dark' ? moonIcon() : sunIcon()}
           </Listbox.Button>
@@ -131,7 +131,7 @@ export default function ThemeToggle() {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Listbox.Options className="absolute bg-white/40 top-full right-0 mt-5 rounded-lg shadow-lg ring-slate-900/10 overflow-hidden w-32 text-sm text-slate-700 font-semibold dark:ring-0 dark:shadow-[inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)] dark:bg-black/40 backdrop-blur-md dark:text-slate-300 duration-100 ring-1 mt-6 z-50">
+            <Listbox.Options className="absolute bg-white/40 top-3 -right-full md:right-0 mt-5 rounded-lg shadow-lg ring-slate-900/10 overflow-hidden w-32 text-sm text-slate-700 font-semibold dark:ring-0 dark:shadow-[inset 0 1px 0 0 hsl(0deg 0% 100% / 5%)] dark:bg-black/40 backdrop-blur-md dark:text-slate-300 duration-100 ring-1 mt-6 ">
               {options.map((option) => (
                 <Listbox.Option
                   key={option.text}
@@ -148,7 +148,7 @@ export default function ThemeToggle() {
                       className={`cursor-pointer py-1 px-2 flex items-center justify-start ${
                         selected
                           ? 'text-sky-500'
-                          : 'text-slate-500 dark:text-slate-300'
+                          : 'text-slate-800 dark:text-slate-300'
                       }`}
                     >
                       <div className="mr-1">{option.icon()}</div>

@@ -52,7 +52,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white/40 backdrop-blur-md px-2 sm:px-4 py-2.5 dark:bg-black/40 fixed top-2 sm:top-6 inset-x-2 sm:inset-x-6 rounded-lg shadow-lg shadow-black/40 z-50">
+    <nav className="bg-white/40 backdrop-blur-md px-2 sm:px-4 py-2.5 dark:bg-black/40 fixed top-2 sm:top-6 inset-x-2 sm:inset-x-6 rounded-md shadow-lg shadow-black/40 z-50">
       <div className="container flex  flex-wrap items-center justify-between mx-auto">
         <a
           href="/"
@@ -74,7 +74,10 @@ export default function Navbar() {
               id="toggle"
               onChange={(e) => toggleModal()}
             />
-            <label htmlFor="toggle" className="cursor-pointer">
+            <label
+              htmlFor="toggle"
+              className="cursor-pointer text-black dark:text-white"
+            >
               <span className="sr-only">Open main menu</span>
               <svg
                 className="w-6 h-6"
@@ -96,11 +99,11 @@ export default function Navbar() {
           </div>
         </div>
         <div
-          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+          className={`items-center justify-between w-full md:flex md:w-auto md:order-1  ${
             !isOpen && 'hidden'
           }`}
         >
-          <ul className="flex flex-col p-4 mt-4 rounded-lg bg-white backdrop-blur-md shadow-lg  md:flex-row md:space-x-8 md:mt-0 md:text-base md:font-medium md:border-0 md:bg-white/30 dark:bg-slate-900/50 md:dark:bg-slate-900/10 dark:border-gray-700">
+          <ul className="flex flex-col p-4 mt-4 rounded-lg bg-white backdrop-blur-md shadow-lg shadow-black/30  md:flex-row md:space-x-8 md:mt-0 md:text-base md:font-medium md:border-0 md:bg-white/30 dark:bg-slate-900/50 md:dark:bg-slate-900/10 dark:border-gray-700  ">
             {items.map((item, i) => (
               <li key={i}>
                 <a css={itemStyle} href={item.href}>
