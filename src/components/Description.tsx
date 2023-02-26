@@ -10,9 +10,9 @@ interface ContentProps {
 
 export default function Description() {
   return (
-    <ViewContainer className="mx-5 md:mx-8 mt-6 flex flex-col md:flex-row p-10 md:px-12 gap-5 md:gap-8 justify-center">
+    <ViewContainer className="mt-6 flex flex-col md:flex-row p-10 md:px-12 gap-5 md:gap-8 justify-center">
       <Content
-        title="Frontend "
+        title="Frontend"
         desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
       >
         <svg

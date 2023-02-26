@@ -52,7 +52,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white/40 backdrop-blur-md px-2 sm:px-4 py-2.5 dark:bg-black/40 fixed top-5 sm:top-6 inset-x-5 sm:inset-x-8 rounded-md shadow-lg shadow-black/30 z-[100] text-slate-700 dark:text-slate-200">
+    <nav className="bg-white/40 backdrop-blur-md px-2 sm:px-4 py-2.5 dark:bg-black/40 fixed top-5 sm:top-6 inset-x-5 rounded-md shadow-lg shadow-black/30 z-[100] text-slate-700 dark:text-slate-200">
       <div className="container flex  flex-wrap items-center justify-between mx-auto">
         <a
           href="/"

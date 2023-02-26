@@ -19,10 +19,13 @@ export default function Info() {
         </svg>
       </div>
       <p className="font-medium text-lg text-justify">
-        Welcome to my site, I'm Steven Elias. A frontend web developer based in
-        Ecuador. I love to create responsive and user-friendly interfaces that
-        enhance the user experience. Here are some exciting project that I have
-        done.
+        Welcome to my site, I'm Steven Elias. A{' '}
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+          frontend
+        </span>{' '}
+        web developer based in Ecuador. I love to create responsive and
+        user-friendly interfaces that enhance the user experience. Here are some
+        exciting project that I have done.
       </p>
     </ViewContainer>
   );
