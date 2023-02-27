@@ -5,10 +5,10 @@ import ViewContainer from '../ViewContainer';
 
 export default function Works() {
   return (
-    <ViewContainer className="mt-12 p-10">
-      <ViewContainer className="text-center py-10 text-2xl md:text-4xl font-bold">
+    <ViewContainer className="mt-12 p-10  ">
+      <h2 className="text-center py-10 text-2xl md:text-5xl font-bold">
         Works
-      </ViewContainer>
+      </h2>
       <ViewContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5 p-10">
         <div className="col-span-2">
           <img src={githubfinder} alt="phonebook picture" />
