@@ -44,14 +44,14 @@ const projects: Project[] = [
 
 export default function Works() {
   return (
-    <div className="relative">
+    <div className="relative mt-10">
       <div
         className={`absolute inset-y-0 -left-10 -right-10  bg-bottom bg-no-repeat bg-fixed bg-slate-50 dark:bg-[#0B1120] bg`}
       >
         <div className="absolute inset-0 bg-grid bg-fixed" />
       </div>
       <div className=" backdrop-blur-0 py-10 flex flex-col">
-        <h2 className="text-slate-900 dark:text-white text-4xl font-extrabold pt-10 text-center">
+        <h2 className="text-slate-900 dark:text-white text-4xl font-extrabold py-10 w-fit mx-auto md:text-5xl">
           Check out my recent works
         </h2>
         <Swiper
@@ -76,23 +76,12 @@ export default function Works() {
               onClick={() => console.log('clicked')}
               onMouseOver={() => console.log('hover')}
               key={project.id}
-              className="max-w-sm shadow-lg shadow-black/50 mb-10 "
+              className="max-w-sm shadow-lg shadow-black/50 my-10 rounded-lg overflow-hidden"
             >
               <img src={project.img} alt={project.title} />
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <div className="flex justify-center gap-4 mt-5">
-          <div className="w-64">
-            <img src={githubfinder} alt="githubfinder" />
-          </div>
-          <div className="w-64">
-            <img src={techcommerce} alt="techcommerce" />
-          </div>
-          <div className="w-64 ">
-            <img src={phoneBook} alt="phone" />
-          </div>
-        </div> */}
       </div>
     </div>
   );
